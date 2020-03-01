@@ -1,2 +1,2 @@
-# Fire-Bot
+# Fire
 Bot using heroku, 24/7
