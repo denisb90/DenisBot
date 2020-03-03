@@ -1,10 +1,29 @@
-const Files = require(require('path').join(__dirname, 'js', 'Main.js')).Files;
+const Discord = require('discord.js');
 
-if(!process.send) {
+const client = new Discord.Client();
 
-Files.initStandalone();
+ 
 
-} else {
+client.on('ready', () => {
 
-process.on('message', function(content) {
-	Files.initBotTest(content);
+    console.log('I am ready!');
+
+});
+
+ 
+
+client.on('message', message => {
+
+    if (message.content === 'Hello') {
+
+       message.reply('Hi');
+
+       }
+
+});
+
+ 
+
+// THIS  MUST  BE  THIS  WAY
+
+client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
